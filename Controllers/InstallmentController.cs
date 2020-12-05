@@ -26,7 +26,7 @@ namespace jtcinstallment.Api.Controllers
         public async Task<ApiResponse> AllInstallment()
         {
             var listcustomer = await _context.TblCustomerMaster.ToListAsync();
-
+               
             var listinstallment= await _context.TblInstallment.ToListAsync();
             var items = (from li in listinstallment
                         join lc in listcustomer on li.CustomerId equals lc.Id
